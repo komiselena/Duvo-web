@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duvo — App for Couples</title>
+<meta name="description" content="A private journal, games and date ideas for two people.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap">
+<style>
+  :root {
+    --ground: #FBF1F3; --surface: #FFFFFF; --sunk: #F6E7EA;
+    --ink: #1C1C1E; --ink-soft: #5F4C51; --ink-faint: #9C878C;
+    --raspberry: #D4395E; --orange: #F26B38; --edge: #EDD9DE;
+    --shadow: rgba(122, 42, 62, .10);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --ground: #15100F; --surface: #201719; --sunk: #2B1F23;
+      --ink: #F7EDEF; --ink-soft: #C0A8AE; --ink-faint: #8C757B;
+      --raspberry: #FF7A97; --orange: #FF9360; --edge: #38282E;
+      --shadow: rgba(0, 0, 0, .5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #15100F; --surface: #201719; --sunk: #2B1F23;
+    --ink: #F7EDEF; --ink-soft: #C0A8AE; --ink-faint: #8C757B;
+    --raspberry: #FF7A97; --orange: #FF9360; --edge: #38282E;
+    --shadow: rgba(0, 0, 0, .5);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: Nunito, ui-rounded, -apple-system, system-ui, sans-serif;
+    font-size: 16.5px; line-height: 1.68; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 44px 24px 96px; }
+
+  .brand {
+    display: inline-flex; align-items: center; gap: 9px;
+    text-decoration: none; color: var(--ink); margin-bottom: 34px;
+  }
+  .mark {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--raspberry), var(--orange));
+    display: grid; place-items: center; color: #fff;
+    font-weight: 900; font-size: 15px; line-height: 1;
+  }
+  .brand b { font-weight: 900; font-size: 19px; letter-spacing: -.01em; }
+
+  h1 {
+    font-weight: 900; font-size: clamp(30px, 6vw, 42px); line-height: 1.08;
+    letter-spacing: -.025em; margin: 0 0 8px; text-wrap: balance;
+  }
+  .stamp { color: var(--ink-faint); font-size: 14.5px; margin: 0 0 36px; }
+
+  h2 {
+    font-weight: 800; font-size: 19px; letter-spacing: -.01em;
+    margin: 34px 0 8px; text-wrap: balance;
+  }
+  p { margin: 0 0 13px; color: var(--ink-soft); }
+  ul { margin: 0 0 13px; padding-left: 21px; color: var(--ink-soft); }
+  li { margin-bottom: 5px; }
+  li::marker { color: var(--raspberry); }
+  a { color: var(--raspberry); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  .lede { font-size: 18px; color: var(--ink); max-width: 56ch; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--edge);
+    border-radius: 14px; padding: 22px 24px; margin: 0 0 18px;
+    box-shadow: 0 4px 14px var(--shadow);
+  }
+  .card h2 { margin-top: 0; }
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+
+  .mail {
+    display: inline-block; margin-top: 4px; padding: 11px 20px;
+    border-radius: 999px; background: var(--raspberry); color: #fff;
+    font-weight: 800; text-decoration: none; font-size: 15.5px;
+  }
+
+  nav.links { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
+  nav.links a { font-weight: 700; font-size: 15px; }
+
+  footer {
+    margin-top: 54px; padding-top: 20px; border-top: 1px solid var(--edge);
+    color: var(--ink-faint); font-size: 14px;
+  }
+  footer a { color: var(--ink-faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="brand" href="/duvo/"><span class="mark">D</span><b>Duvo</b></a>
+
+<h1>An app for the two of you</h1>
+<p class="lede">Duvo keeps the small things: the day you met, what you answered
+today, the evening you tried to make pasta. Games to play across a table,
+date ideas when neither of you can decide, and a journal only the two of you
+can read.</p>
+
+<div class="card">
+  <h2>Where to find things</h2>
+  <ul>
+    <li><a href="/duvo/support">Support</a> — how to reach a human, manage a
+    subscription, or delete everything.</li>
+    <li><a href="/duvo/privacy">Privacy Policy</a> — what Duvo keeps, where,
+    and what it never sends.</li>
+  </ul>
+</div>
+
+<nav class="links">
+  <a href="/duvo/privacy">Privacy Policy</a>
+  <a href="/duvo/support">Support</a>
+  <a href="mailto:health.kegel@gmail.com">health.kegel@gmail.com</a>
+</nav>
+
+<footer>
+  <p>Duvo — an app for couples. 2026 Elena Komissarova.<br>
+  <a href="/duvo/">Home</a> · <a href="/duvo/privacy">Privacy Policy</a> · <a href="/duvo/support">Support</a></p>
+</footer>
+</div>
+</body>
+</html>
