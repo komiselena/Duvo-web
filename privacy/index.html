@@ -94,7 +94,7 @@
 <div class="wrap">
 <a class="brand" href="/Duvo-web/"><span class="mark">D</span><b>Duvo</b></a>
 <h1>Privacy Policy</h1>
-<p class="stamp">Last updated 26 September 2026</p>
+<p class="stamp">Last updated 5 November 2026</p>
 <p class="lede">Duvo is a private journal for two people. This page says exactly what it keeps, where it goes, and what never leaves your phone.</p>
 <h2>The short version</h2>
 <p>Duvo is a private journal for two people. What you write stays between you, your partner, and the systems needed to move it between your two phones. Nothing is sold, and nothing is used to advertise to you.</p>
@@ -103,22 +103,20 @@
 <h2>What you give us</h2>
 <ul><li>Your name and your partner&#x27;s name, and the date your relationship started, from onboarding.</li><li>Your answers to the setup questions: love languages, what an ideal date looks like, what you want to focus on.</li><li>Journal entries: titles, notes, dates, places, tags and photographs.</li><li>Answers to the daily question.</li><li>Dates you plan, and answers given while playing Sparks.</li></ul>
 <h2>Where it is kept</h2>
-<p>Everything is written first to a database on your own device. If you have linked with a partner, the shared parts — journal entries, daily answers, planned dates and your connection score — are copied to Google Firebase Firestore under a document that only the two of you can read. Security rules enforce this on the server; nobody else can reach it, including with the app&#x27;s own configuration.</p>
+<p>Your profile and optional avatar preview are stored in Firebase Firestore. Journal entries and planned dates are saved on your device. If you have linked with a partner, shared journal entries, daily answers, planned dates and your connection score are also copied to Firestore for synchronization. Server authorization and Firestore security rules restrict access to the linked accounts. Invitations and changes to both partner profiles are committed atomically and checked by Firestore Security Rules. No Cloud Functions or external content-generation service is used.</p>
 <p>Duvo does not use iCloud or CloudKit.</p>
 <h2>Photographs</h2>
-<p>Full-resolution photographs never leave your device. When a memory is shared with your partner, Duvo makes a small preview — about 600 pixels on its longest side, up to three per memory — and sends only that. Your originals stay in Duvo&#x27;s local database on your phone.</p>
+<p>Full-resolution photographs never leave your device. When a memory is shared with your partner, Duvo makes a small preview — about 600 pixels on its longest side, up to three per memory — and sends only that. Your originals stay in Duvo&#x27;s local database on your phone. An optional profile photograph is uploaded only as a small avatar preview.</p>
 <h2>Your calendar</h2>
 <p>With your permission, Duvo writes planned dates into your device&#x27;s own calendar. It does not read your existing events and does not upload anything from your calendar.</p>
 <h2>Notifications</h2>
 <p>Reminders, milestones and daily nudges are scheduled locally on your device. Duvo has no push server; their contents never leave your phone.</p>
-<h2>AI date ideas</h2>
-<p>When you ask Duvo to generate date ideas, the preferences you entered during setup are sent to OpenAI to produce suggestions. Your names, your journal entries, your photographs and your daily answers are never sent. OpenAI processes the request under its own terms and does not receive anything identifying you.</p>
 <h2>Analytics and crashes</h2>
-<p>Duvo uses Firebase Analytics to see which features get used, and Firebase Crashlytics to learn about crashes. These carry no names, no journal or answer text, no memory titles and no pairing codes — only which screen was opened and what kind of action was taken.</p>
+<p>Usage analytics and crash reporting are off by default. You can enable or disable them in Profile → Settings → Share usage and crash reports. If enabled, Firebase Analytics receives usage events and Firebase Crashlytics receives diagnostics, app/device information and anonymous installation identifiers. Duvo does not attach your Firebase account ID or send journal text, photographs, answers, memory titles or pairing codes in these reports. Advertising tracking and personalization are disabled. Turning reporting off stops future collection and clears pending crash reports. Previously transmitted reports follow Google&#x27;s retention and deletion policies.</p>
 <h2>Subscriptions</h2>
-<p>Purchases are handled by Apple. Apphud helps Duvo know whether your subscription is active, including on a second device. Duvo never sees your payment details.</p>
+<p>Purchases are handled by Apple. Apphud processes purchase and restore requests, validates subscriptions and reports entitlement status. It receives subscription transactions and an app-specific customer identifier. Its advertising tracking is disabled. Duvo never sees your payment details.</p>
 <h2>Deleting everything</h2>
-<p>Profile → Delete Account removes your account and the data stored for it, including anything shared with your partner. Deleting the app from your phone removes the local database along with it. Both are permanent.</p>
+<p>Profile → Delete Account deletes your Firebase account, profile, local database and shared cloud journal, answers, dates and pairing records. The app confirms completion only after Firebase has confirmed the data and account deletion. If an operation fails, it shows an error so you can retry. Previously downloaded copies on your partner&#x27;s device and events already added to Apple Calendar may remain; we cannot erase their device remotely. A minimal security record of the deleted account identifier is retained to reject old authentication tokens. Deleting your account does not cancel your Apple subscription; manage it in your device&#x27;s subscription settings. Previously sent optional diagnostic reports and subscription records follow the providers&#x27; retention policies. Contact us to request assistance with those records.</p>
 <h2>Children</h2>
 <p>Duvo is not directed at children and is not intended for anyone under 13.</p>
 <h2>Changes and contact</h2>
